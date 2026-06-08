@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZABO Network</title>
+
+    <link rel="stylesheet" href="/static/zabo.css">
+    <script src="/static/zabo.js" defer></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="profile-card">
+            <img src="/static/default-user.png">
+            <h3 id="profile-name">Guest</h3>
+<p id="profile-role">Not Logged In</p>
+        </div>
+
+     <h2 class="marketplace-title">
+    ZABO Marketplace
+</h2>
+        <button onclick="showSection('marketplace')">
+            🌾 Marketplace
+        </button>
+
+        <button onclick="showSection('transport')">
+            🚚 Transport
+        </button>
+
+        <button>
+            ❤️ Saved Listings
+        </button>
+
+        <button>
+            🔥 Emergency Trade
+        </button>
+
+        <button>
+            👥 Community
+        </button>
+
+        <button>
+            ⭐ Reviews
+        </button>
+
+        <button onclick="showSection('login')">
+            🔐 Account
+        </button>
+        <button onclick="logout()">
+    🚪 Logout
+</button>
+
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+
+        <nav class="navbar">
+
+            <div class="logo">
+                ZABO NETWORK
+            </div>
+
+            <div class="nav-links">
+                <button onclick="showSection('marketplace')">Marketplace</button>
+                <button onclick="showSection('transport')">Transport</button>
+                <button onclick="showSection('login')">Login</button>
+                <button onclick="showSection('register')">Register</button>
+            </div>
+
+        </nav>
+
+        <div class="hero-content">
+
+            <h1>Connecting Farmers, Buyers & Transporters</h1>
+
+            <p>
+                Buy, Sell and Transport Agricultural Products Across Nagaland.
+            </p>
+
+            <button onclick="showSection('marketplace')" class="hero-btn">
+                Explore Marketplace
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured-section">
+
+        <h2>Featured Products</h2>
+
+        <div class="featured-grid">
+
+            <div class="featured-card">
+                🌾 Organic Vegetables
+            </div>
+
+            <div class="featured-card">
+                🍊 Fresh Fruits
+            </div>
+
+            <div class="featured-card">
+                🌶️ Spices
+            </div>
+
+            <div class="featured-card">
+                🥔 Local Produce
+            </div>
+
+        </div>
+
+    </section>
+<section class="stats-section">
+
+    <div class="stat-box">
+        <h2>500+</h2>
+        <p>Farmers</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>1000+</h2>
+        <p>Products</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>200+</h2>
+        <p>Transporters</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>50+</h2>
+        <p>Villages</p>
+    </div>
+
+</section>
+    <!-- AUTH SECTION -->
+    <section id="auth">
+
+        <div id="login" class="form-section">
+
+            <h2>Login</h2>
+
+            <label>
+                Username:
+                <input type="text" id="login-username">
+            </label>
+
+            <label>
+                Password:
+                <input type="password" id="login-password">
+            </label>
+
+            <button id="login-btn">
+                Login
+            </button>
+
+        </div>
+
+        <div id="register" class="form-section">
+
+            <h2>Register</h2>
+
+            <label>
+                Username:
+                <input type="text" id="reg-username">
+            </label>
+
+            <label>
+                Email:
+                <input type="email" id="reg-email">
+            </label>
+
+            <label>
+                Password:
+                <input type="password" id="reg-password">
+            </label>
+
+            <label>
+                Role:
+                <select id="reg-role">
+                    <option value="Farmer">Farmer</option>
+                    <option value="Buyer">Buyer</option>
+                    <option value="Transporter">Transporter</option>
+                    <option value="Seller">Seller</option>
+                </select>
+            </label>
+
+            <button id="register-btn">
+                Register
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section id="marketplace-section" class="hidden">
+
+        <div id="product-form" class="form-section">
+            <div class="category-bar">
+
+    <button>🌾 Vegetables</button>
+    <button>🍊 Fruits</button>
+    <button>🌶️ Spices</button>
+    <button>🥔 Crops</button>
+    <button>🐄 Livestock</button>
+    <button>🚚 Transport</button>
+
+</div>
+            <h2>Create Product Listing</h2>
+
+            <input type="text" id="prod-name" placeholder="Product Name">
+
+           <label>Category:</label>
+
+<select id="prod-cat">
+
+    <option value="Vegetables">Vegetables</option>
+
+    <option value="Fruits">Fruits</option>
+
+    <option value="Spices">Spices</option>
+
+    <option value="Flowers">Flowers</option>
+
+    <option value="Seeds">Seeds</option>
+
+    <option value="Livestock">Livestock</option>
+
+    <option value="Organic">Organic Products</option>
+
+    <option value="Tools">Tools & Equipment</option>
+
+</select>
+
+            <input type="number" id="prod-price" placeholder="Price">
+
+           <label>Quantity:</label>
+
+<input type="number" id="prod-qty"placeholder="Quantity">
+
+<select id="prod-unit">
+    <option value="kg">Kilogram (kg)</option>
+    <option value="piece">Piece</option>
+    <option value="bag">Bag</option>
+    <option value="crate">Crate</option>
+    <option value="liter">Liter</option>
+    <option value="dozen">Dozen</option>
+</select>
+
+            <input type="text" id="prod-location" placeholder="Location">
+
+            <textarea id="prod-desc" placeholder="Description"></textarea>
+
+            <input type="file" id="prod-image">
+
+            <button id="create-prod-btn">
+                Create Product
+            </button>
+
+        </div>
+
+        <div id="product-list">
+
+            <h2>Marketplace Feed</h2>
+
+           <div class="search-bar">
+
+    <input
+        type="text"
+        placeholder="Search products..."
+        id="searchInput"
+    >
+
+    <select id="district-filter">
+
+        <option value="">All Districts</option>
+
+        <option>Dimapur</option>
+        <option>Kohima</option>
+        <option>Mokokchung</option>
+        <option>Mon</option>
+        <option>Tuensang</option>
+        <option>Wokha</option>
+        <option>Zunheboto</option>
+        <option>Phek</option>
+        <option>Kiphire</option>
+        <option>Longleng</option>
+        <option>Noklak</option>
+        <option>Chümoukedima</option>
+        <option>Niuland</option>
+        <option>Shamator</option>
+        <option>Tseminyu</option>
+
+    </select>
+
+</div>
+
+            <div id="product-cards"></div>
+
+        </div>
+
+    </section>
+
+    <!-- TRANSPORT -->
+    <section id="transport-section" class="hidden">
+
+        <div id="transport-form" class="form-section">
+
+            <h2>Create Transport Listing</h2>
+
+            <input type="text" id="trans-vehicle" placeholder="Vehicle">
+
+            <input type="text" id="trans-cap" placeholder="Capacity">
+
+            <input type="text" id="trans-from" placeholder="From">
+
+            <input type="text" id="trans-to" placeholder="To">
+
+            <input type="date" id="trans-date">
+
+            <button id="create-trans-btn">
+                Create Transport
+            </button>
+
+        </div>
+
+        <div id="transport-list">
+
+            <h2>Available Transports</h2>
+
+            <ul id="transports-ul"></ul>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
