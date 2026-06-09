@@ -816,7 +816,7 @@ body::after{
         #38ef7d
     );
 
-    -webkit-background-clip:text;
+   
     -webkit-text-fill-color:transparent;
 }
 
