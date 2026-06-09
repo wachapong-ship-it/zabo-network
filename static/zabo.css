@@ -522,3 +522,319 @@ body{
         width:90%;
     }
 }
+/* ==================================
+   ZABO MODERN UI UPGRADE
+================================== */
+
+/* Animated Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    top:-250px;
+    right:-250px;
+    border-radius:50%;
+    background:
+    radial-gradient(
+        circle,
+        rgba(56,239,125,0.15),
+        transparent
+    );
+    z-index:-1;
+    animation:blob1 18s linear infinite;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    bottom:-250px;
+    left:-250px;
+    border-radius:50%;
+    background:
+    radial-gradient(
+        circle,
+        rgba(15,155,15,0.12),
+        transparent
+    );
+    z-index:-1;
+    animation:blob2 22s linear infinite;
+}
+
+@keyframes blob1{
+    from{
+        transform:
+        rotate(0deg)
+        translateX(40px)
+        rotate(0deg);
+    }
+    to{
+        transform:
+        rotate(360deg)
+        translateX(40px)
+        rotate(-360deg);
+    }
+}
+
+@keyframes blob2{
+    from{
+        transform:
+        rotate(360deg)
+        translateX(60px)
+        rotate(-360deg);
+    }
+    to{
+        transform:
+        rotate(0deg)
+        translateX(60px)
+        rotate(0deg);
+    }
+}
+
+/* Sidebar Upgrade */
+
+.sidebar{
+    backdrop-filter:blur(15px);
+}
+
+.sidebar button{
+    transition:all .3s ease;
+}
+
+.sidebar button:hover{
+    transform:
+    translateX(8px)
+    scale(1.02);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Hero Upgrade */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    top:-200px;
+    right:-150px;
+
+    animation:
+    heroFloat 8s ease-in-out infinite;
+}
+
+@keyframes heroFloat{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(40px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* Logo Glow */
+
+.logo{
+
+    letter-spacing:2px;
+
+    animation:
+    logoGlow 3s infinite;
+}
+
+@keyframes logoGlow{
+
+    0%{
+        text-shadow:none;
+    }
+
+    50%{
+        text-shadow:
+        0 0 15px rgba(255,255,255,.8);
+    }
+
+    100%{
+        text-shadow:none;
+    }
+}
+
+/* Glass Cards */
+
+.product-card,
+.featured-card,
+.stat-box,
+.form-section{
+
+    background:
+    rgba(255,255,255,0.85);
+
+    backdrop-filter:
+    blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,0.4);
+}
+
+/* Product Animation */
+
+.product-card{
+
+    animation:
+    floatingCard 6s ease-in-out infinite;
+}
+
+.product-card:nth-child(2){
+    animation-delay:1s;
+}
+
+.product-card:nth-child(3){
+    animation-delay:2s;
+}
+
+.product-card:nth-child(4){
+    animation-delay:3s;
+}
+
+@keyframes floatingCard{
+
+    0%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
+
+    25%{
+        transform:
+        translateY(-6px)
+        rotate(1deg);
+    }
+
+    50%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
+
+    75%{
+        transform:
+        translateY(6px)
+        rotate(-1deg);
+    }
+
+    100%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
+}
+
+.product-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Modern Buttons */
+
+.buy-btn,
+.hero-btn,
+.form-section button{
+
+    transition:all .3s ease;
+}
+
+.buy-btn:hover,
+.hero-btn:hover,
+.form-section button:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
+
+    box-shadow:
+    0 10px 20px rgba(15,155,15,0.3);
+}
+
+/* Search Bar Upgrade */
+
+.search-bar input{
+
+    border:none;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.08);
+
+    transition:.3s;
+}
+
+.search-bar input:focus{
+
+    outline:none;
+
+    box-shadow:
+    0 10px 25px rgba(15,155,15,0.25);
+}
+
+/* Marketplace Title */
+
+.marketplace-title{
+
+    font-size:45px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0f9b0f,
+        #38ef7d
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* Premium Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f5f9;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#0f9b0f;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#0b7a0b;
+}
